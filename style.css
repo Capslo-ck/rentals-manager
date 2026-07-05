@@ -319,6 +319,12 @@ label .optional{font-weight:400; color:var(--text-dim);}
 }
 .keyhole svg{width:26px;height:26px;}
 
+/* ---------- Google logo (consistent across login/signup) ---------- */
+.google-logo{
+  display:flex;
+  align-items:center;
+}
+
 /* ---------- Recovery steps visibility ---------- */
 .recovery-step{
   display:none;
