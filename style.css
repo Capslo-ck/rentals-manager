@@ -319,6 +319,70 @@ label .optional{font-weight:400; color:var(--text-dim);}
 }
 .keyhole svg{width:26px;height:26px;}
 
+/* ---------- Recovery steps visibility ---------- */
+.recovery-step{
+  display:none;
+}
+.recovery-step.active{
+  display:block;
+}
+
+/* ---------- Success icon ---------- */
+.success-icon{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:80px;
+  height:80px;
+  margin:0 auto 20px;
+  background:rgba(79,216,151,0.15);
+  border-radius:50%;
+  color:var(--ok);
+}
+.success-icon svg{width:40px;height:40px;}
+
+/* ---------- Info box ---------- */
+.info-box{
+  display:flex;
+  gap:12px;
+  padding:14px;
+  background:rgba(95,224,194,0.08);
+  border:1px solid rgba(95,224,194,0.2);
+  border-radius:12px;
+  margin:16px 0 20px;
+  font-size:13px;
+  color:var(--text-mut);
+  line-height:1.6;
+}
+.info-box svg{
+  width:20px;
+  height:20px;
+  color:var(--mint);
+  flex-shrink:0;
+  margin-top:2px;
+}
+.info-box strong{
+  color:var(--text-hi);
+  display:block;
+  margin-bottom:4px;
+}
+.info-box p{
+  margin:0;
+}
+.info-box .link-btn{
+  background:none;
+  border:none;
+  color:var(--mint);
+  text-decoration:underline;
+  cursor:pointer;
+  font-weight:600;
+  padding:0;
+  font-family:inherit;
+}
+.info-box .link-btn:hover{
+  opacity:0.8;
+}
+
 @media (max-width:480px){
   .card{padding:32px 22px 26px;}
   .two-col{grid-template-columns:1fr;}
