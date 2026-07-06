@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rental Manager — Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<!-- ================= App Shell ================= -->
+<div class="app">
+
+  <!-- Sidebar (desktop) / Bottom bar (mobile) -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-brand">
+      <svg class="logo-mark" viewBox="0 0 40 40" fill="none">
+        <path d="M20 4 6 15v21h10V25h8v11h10V15L20 4Z" fill="url(#g1)"/>
+        <defs>
+          <linearGradient id="g1" x1="6" y1="4" x2="34" y2="36" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#5fe0c2"/><stop offset="1" stop-color="#3d7bd6"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <span class="nav-brand-text">Rental Manager</span>
+    </div>
+
+    <button class="nav-item active" data-view="dashboard">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+      <span>Dashboard</span>
+    </button>
+    <button class="nav-item" data-view="portfolio">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-4h6v4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Portfolio</span>
+    </button>
+    <button class="nav-item" data-view="payments">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20" stroke-linecap="round"/></svg>
+      <span>Payments</span>
+    </button>
+    <button class="nav-item" data-view="reports">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18" stroke-linecap="round"/><path d="M7 14l4-4 3 3 5-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Reports</span>
+    </button>
+    <button class="nav-item" data-view="management">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.7 1.7 0 0 0-1.87-.34 1.7 1.7 0 0 0-1 1.55V21a2 2 0 1 1-4 0v-.09a1.7 1.7 0 0 0-1-1.55 1.7 1.7 0 0 0-1.87.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.7 1.7 0 0 0 .34-1.87 1.7 1.7 0 0 0-1.55-1H3a2 2 0 1 1 0-4h.09a1.7 1.7 0 0 0 1.55-1 1.7 1.7 0 0 0-.34-1.87l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.7 1.7 0 0 0 1.87.34h0a1.7 1.7 0 0 0 1-1.55V3a2 2 0 1 1 4 0v.09a1.7 1.7 0 0 0 1 1.55h0a1.7 1.7 0 0 0 1.87-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.7 1.7 0 0 0-.34 1.87v0a1.7 1.7 0 0 0 1.55 1H21a2 2 0 1 1 0 4h-.09a1.7 1.7 0 0 0-1.55 1Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Management</span>
+    </button>
+  </nav>
+
+  <!-- Main content area; views are rendered here by app.js -->
+  <div class="main">
+    <header class="topbar">
+      <div>
+        <h1 class="topbar-title" id="pageTitle">Dashboard</h1>
+        <p class="topbar-sub" id="pageSub">How is my rental business performing today?</p>
+      </div>
+      <div class="topbar-company" id="topbarCompany"></div>
+    </header>
+
+    <main class="view" id="viewRoot" aria-live="polite"></main>
+  </div>
+</div>
+
+<!-- ================= Modal ================= -->
+<div class="modal-overlay hidden" id="modalOverlay">
+  <div class="modal" role="dialog" aria-modal="true">
+    <div class="modal-head">
+      <h2 id="modalTitle"></h2>
+      <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<!-- ================= Toast ================= -->
+<div class="toast hidden" id="toast"></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
