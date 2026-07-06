@@ -33,7 +33,13 @@ function navigate(view, params = {}) {
   window.scrollTo(0, 0);
 }
 
-navItems.forEach(btn => btn.addEventListener('click', () => navigate(btn.dataset.view)));
+navItems.forEach(btn => btn.addEventListener('click', () => {
+  if (btn.dataset.action === 'login') {
+    showToast('Log in will be implemented soon');
+    return;
+  }
+  navigate(btn.dataset.view);
+}));
 
 /* ---------- Shared UI helpers ---------- */
 
